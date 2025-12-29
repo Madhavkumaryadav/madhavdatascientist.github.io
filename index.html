@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-4908274116559561">
   <title>Madhav Kumar Yadav – Data Science Portfolio</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4908274116559561"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4908274116559561 "
      crossorigin="anonymous"></script>
 
   <!-- ---------- RESET + GLOBAL ---------- -->
@@ -265,6 +265,11 @@
       backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 212, 255, .2);
     }
     .project-image {
       height: 160px;
@@ -562,6 +567,29 @@
     <h2 class="fade-in">Data-Driven Projects</h2>
     <div class="project-grid">
 
+      <!-- Your New ML Project - Student Score Predictor -->
+      <a href="https://github.com/Madhavkumaryadav/ML_Project_1" target="_blank" class="project-card-link">
+        <div class="project-card fade-in">
+          <div class="status-badge completed">Completed</div>
+          <div class="project-image">🎓</div>
+          <div class="project-content">
+            <h3 class="project-title">Student Score Prediction ML Model</h3>
+            <p class="project-description">
+              An advanced machine learning model that predicts student academic performance based on various factors 
+              including study hours, attendance, parental involvement, and educational resources using Linear Regression 
+              and comprehensive feature engineering techniques.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Linear Regression</span>
+              <span class="tech-tag">Feature Engineering</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
       <!-- Project 1 - In Progress -->
       <div class="project-card fade-in">
         <div class="status-badge in-progress">In Progress</div>
@@ -582,7 +610,7 @@
       </div>
 
       <!-- Project 2 - Completed -->
-      <a href="https://fwi-predictor1.onrender.com/" target="_blank" class="project-card-link">
+      <a href="https://fwi-predictor1.onrender.com/ " target="_blank" class="project-card-link">
         <div class="project-card fade-in">
           <div class="status-badge completed">Completed</div>
           <div class="project-image">🔥</div>
@@ -601,37 +629,6 @@
           </div>
         </div>
       </a>
-
-      <style>
-        .project-card-link {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        .status-badge {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 4px 10px;
-          font-size: 12px;
-          font-weight: bold;
-          border-radius: 6px;
-        }
-
-        .completed {
-          background: #4caf50;
-          color: white;
-        }
-
-        .in-progress {
-          background: #ff9800;
-          color: white;
-        }
-
-        .project-card {
-          position: relative;
-        }
-      </style>
 
       <!-- Project 3 -->
       <div class="project-card fade-in">
@@ -656,7 +653,37 @@
   </div>
 </section>
 
+<style>
+  .project-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
 
+  .status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    z-index: 10;
+  }
+
+  .completed {
+    background: #4caf50;
+    color: white;
+  }
+
+  .in-progress {
+    background: #ff9800;
+    color: white;
+  }
+
+  .project-card {
+    position: relative;
+  }
+</style>
 
  <!-- contact -->
 <section id="contact" class="contact">
@@ -679,28 +706,28 @@
       </a>
 
       <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/madhav-yadav-35940624a/" target="_blank" class="contact-item fade-in contact-link">
+      <a href="https://www.linkedin.com/in/madhav-yadav-35940624a/ " target="_blank" class="contact-item fade-in contact-link">
         <div class="contact-icon">💼</div>
         <h3>LinkedIn</h3>
         <p>Connect with me</p>
       </a>
 
       <!-- GitHub -->
-      <a href="https://github.com/Madhavkumaryadav" target="_blank" class="contact-item fade-in contact-link">
+      <a href="https://github.com/Madhavkumaryadav " target="_blank" class="contact-item fade-in contact-link">
         <div class="contact-icon">👨‍💻</div>
         <h3>GitHub</h3>
         <p>View my code</p>
       </a>
 
       <!-- LeetCode -->
-      <a href="https://leetcode.com/u/Madhav550/" target="_blank" class="contact-item fade-in contact-link">
+      <a href="https://leetcode.com/u/Madhav550/ " target="_blank" class="contact-item fade-in contact-link">
         <div class="contact-icon">🧩</div>
         <h3>LeetCode</h3>
         <p>Problem solving</p>
       </a>
 
       <!-- Location -->
-      <a href="https://www.google.com/maps/@26.554447,75.9579244,6335m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" 
+      <a href="https://www.google.com/maps/@26.554447 ,75.9579244,6335m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" 
          target="_blank" class="contact-item fade-in contact-link">
         <div class="contact-icon">📍</div>
         <h3>Location</h3>
@@ -802,8 +829,8 @@
     };
     setTimeout(type, 1000);
   </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4908274116559561"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4908274116559561 "
      crossorigin="anonymous"></script>
-  <script src="https://static.app/js/static.js" type="text/javascript"></script>
+  <script src="https://static.app/js/static.js " type="text/javascript"></script>
 </body>
 </html>
