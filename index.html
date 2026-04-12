@@ -429,6 +429,64 @@
       grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
     }
 
+    .resume-viewer {
+      width: 100%;
+      min-height: 560px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    .resume-actions {
+      margin-top: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .resume-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      background: rgba(5, 7, 19, 0.72);
+      backdrop-filter: blur(6px);
+    }
+
+    .resume-modal[hidden] {
+      display: none;
+    }
+
+    .resume-modal-dialog {
+      width: min(980px, 100%);
+      max-height: calc(100vh - 2rem);
+      overflow: auto;
+      padding: 1rem;
+    }
+
+    .resume-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(255,255,255,0.25);
+      padding-bottom: 0.6rem;
+    }
+
+    .resume-modal-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+      color: #f4f8ff;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
     .credibility-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1067,6 +1125,7 @@
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
+        <a href="#" data-open-resume>Resume</a>
         <a href="#credibility">Credibility</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -1086,7 +1145,7 @@
         <p id="summary" class="summary"></p>
         <div class="hero-actions">
           <a href="#projects" class="btn primary"><i class="fas fa-rocket"></i> View Projects</a>
-          <a href="resume.pdf" class="btn ghost" download><i class="fas fa-file-arrow-down"></i> Download Resume</a>
+          <a href="#" data-open-resume class="btn ghost"><i class="fas fa-file-lines"></i> View Resume</a>
           <a href="#contact" class="btn ghost"><i class="fas fa-paper-plane"></i> Contact Me</a>
         </div>
         <div class="availability-pills">
@@ -1201,6 +1260,27 @@
     </footer>
   </main>
 
+  <div id="resume-modal" class="resume-modal" hidden aria-hidden="true">
+    <article class="resume-modal-dialog card" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+      <div class="resume-modal-header">
+        <h2 id="resume-modal-title" class="resume-modal-title">Resume</h2>
+        <button type="button" class="btn ghost" id="resume-close-btn"><i class="fas fa-arrow-left"></i> Back to Main Profile</button>
+      </div>
+      <iframe
+        class="resume-viewer"
+        src="resume.pdf#view=FitH"
+        title="Madhav Yadav Resume"
+        loading="lazy"
+      ></iframe>
+      <div class="resume-actions">
+        <button type="button" class="btn ghost" id="resume-close-btn-bottom"><i class="fas fa-arrow-left"></i> Back</button>
+        <a href="resume.pdf" class="btn primary" download>
+          <i class="fas fa-file-arrow-down"></i> Download Resume
+        </a>
+      </div>
+    </article>
+  </div>
+
   <script>
     const data = {
       name: "Madhav Kumar Yadav",
@@ -1312,7 +1392,7 @@
         }
       ],
       contact: {
-        endpoint: "https://formspree.io/f/your-form-id"
+        endpoint: "https://formsubmit.co/ajax/ymadhav081@gmail.com"
       }
     };
 
@@ -1414,8 +1494,8 @@
       }
 
       const endpoint = data.contact.endpoint;
-      if (!endpoint || endpoint.includes("your-form-id")) {
-        formStatus.textContent = "Contact endpoint not configured yet. Set your Formspree form ID in data.contact.endpoint.";
+      if (!endpoint) {
+        formStatus.textContent = "Contact endpoint not configured yet.";
         return;
       }
 
@@ -1426,10 +1506,11 @@
       }
 
       const payload = {
-        fullName: form.fullName.value.trim(),
+        name: form.fullName.value.trim(),
         email: form.email.value.trim(),
         subject: form.subject.value.trim(),
-        message: form.message.value.trim()
+        message: form.message.value.trim(),
+        _captcha: "false"
       };
 
       submitBtn.disabled = true;
@@ -1461,7 +1542,40 @@
     });
 
     const modeButtons = document.querySelectorAll(".mode-btn");
+    const resumeModal = document.getElementById("resume-modal");
+    const resumeOpeners = document.querySelectorAll("[data-open-resume]");
+    const resumeCloseBtn = document.getElementById("resume-close-btn");
+    const resumeCloseBtnBottom = document.getElementById("resume-close-btn-bottom");
     const savedMode = localStorage.getItem("portfolioMode") || "corporate";
+
+    function openResumeModal(event) {
+      if (event) event.preventDefault();
+      resumeModal.hidden = false;
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeResumeModal() {
+      resumeModal.hidden = true;
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    resumeOpeners.forEach((link) => {
+      link.addEventListener("click", openResumeModal);
+    });
+    resumeCloseBtn.addEventListener("click", closeResumeModal);
+    resumeCloseBtnBottom.addEventListener("click", closeResumeModal);
+    resumeModal.addEventListener("click", (event) => {
+      if (event.target === resumeModal) {
+        closeResumeModal();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !resumeModal.hidden) {
+        closeResumeModal();
+      }
+    });
 
     function applyMode(mode) {
       document.body.setAttribute("data-mode", mode);
