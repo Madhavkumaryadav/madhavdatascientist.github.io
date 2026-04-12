@@ -23,6 +23,7 @@
   <meta name="twitter:description" content="Explore projects, achievements, and skills from Madhav Kumar Yadav.">
   <meta name="twitter:image" content="https://madhavkumaryadav.github.io/madhavdatascientist.github.io/avatar.png">
   <title>Madhav Kumar Yadav | Data Science Portfolio</title>
+  <link rel="preload" as="image" href="avatar.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
@@ -1268,7 +1269,7 @@
       </div>
       <iframe
         class="resume-viewer"
-        src="resume.pdf#view=FitH"
+        data-src="resume.pdf#view=FitH"
         title="Madhav Yadav Resume"
         loading="lazy"
       ></iframe>
@@ -1330,7 +1331,7 @@
             "Tracked 50+ MLflow runs for reproducible experimentation",
             "Improved workflow reproducibility by 40%"
           ],
-          link: "https://github.com/Madhavkumaryadav"
+          link: "https://github.com/Madhavkumaryadav/NetworkSecurity.git"
         },
         {
           title: "Forest Fire Weather Index (FWI) Prediction",
@@ -1345,7 +1346,7 @@
             "GridSearchCV tuning with 5-fold cross-validation",
             "Handled 500+ real-time predictions/day with 99.9% uptime"
           ],
-          link: "https://github.com/Madhavkumaryadav"
+          link: "https://github.com/Madhavkumaryadav/FWI_predictor_project.git"
         },
         {
           title: "Student Performance Predictor (MLOps Pipeline)",
@@ -1360,7 +1361,7 @@
             "Exposed FastAPI REST endpoints with latency under 100ms",
             "Reduced latency from 150ms to 105ms via optimization"
           ],
-          link: "https://github.com/Madhavkumaryadav"
+          link: "https://github.com/Madhavkumaryadav/ML_Project_1.git"
         }
       ],
       social: {
@@ -1543,6 +1544,7 @@
 
     const modeButtons = document.querySelectorAll(".mode-btn");
     const resumeModal = document.getElementById("resume-modal");
+    const resumeViewer = resumeModal.querySelector(".resume-viewer");
     const resumeOpeners = document.querySelectorAll("[data-open-resume]");
     const resumeCloseBtn = document.getElementById("resume-close-btn");
     const resumeCloseBtnBottom = document.getElementById("resume-close-btn-bottom");
@@ -1550,6 +1552,9 @@
 
     function openResumeModal(event) {
       if (event) event.preventDefault();
+      if (!resumeViewer.src) {
+        resumeViewer.src = resumeViewer.dataset.src;
+      }
       resumeModal.hidden = false;
       resumeModal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
