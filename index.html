@@ -1127,7 +1127,7 @@
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#" data-open-resume>Resume</a>
-        <a href="#credibility">Credibility</a>
+        <!-- <a href="#credibility">Credibility</a> -->
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1155,7 +1155,7 @@
           <span class="availability-pill">Remote / On-site</span>
         </div>
         <div class="mini-stats">
-          <span><strong class="stat-number" data-target="250" data-suffix="+">0</strong>LeetCode Problems</span>
+          <span><strong class="stat-number" data-target="350" data-suffix="+">0</strong>LeetCode Problems</span>
           <span><strong class="stat-number" data-target="4" data-suffix=" yrs">0</strong>B.Tech CSE</span>
           <span><strong class="stat-number" data-target="7.77" data-decimals="2">0</strong>CGPA</span>
         </div>
@@ -1181,7 +1181,7 @@
       <div id="skills-container" class="skills-grid"></div>
     </section>
 
-    <section id="credibility" class="block card reveal">
+    <!-- <section id="credibility" class="block card reveal">
       <div class="section-head">
         <h2>Certifications & Achievements</h2>
         <p>Signals recruiters use to evaluate readiness</p>
@@ -1196,7 +1196,7 @@
           <div id="highlighted-repos" class="repo-list"></div>
         </article>
       </div>
-    </section>
+    </section> -->
 
     <section id="projects" class="block card reveal">
       <div class="section-head">
@@ -1296,7 +1296,7 @@
           school: "Jagannath University, Jaipur",
           duration: "Aug 2023 - May 2027 (Expected)",
           score: "CGPA: 7.77 / 10.0",
-          extra: "Relevant coursework: DSA, OOP, DBMS, Linear Algebra, Calculus, Statistics, Probability, and Web Development. Achievements: Solved 250+ LeetCode problems with consistent practice."
+          extra: "Relevant coursework: DSA, OOP, DBMS, Linear Algebra, Calculus, Statistics, Probability, and Web Development. Achievements: Solved 350+ LeetCode problems with consistent practice."
         },
         {
           degree: "Higher Secondary Certificate (12th Grade), Science Stream",
@@ -1307,11 +1307,13 @@
       ],
       skills: [
         { name: "Python", level: 95 },
-        { name: "C++", level: 80 },
-        { name: "Java", level: 65 },
+        //{ name: "C++", level: 80 },
+        //{ name: "Java", level: 65 },
         { name: "SQL / MySQL", level: 90 },
-        { name: "HTML / CSS", level: 85 },
-        { name: "Data Structures & Algorithms", level: 90 },
+        { name: "Machine Learning",level: 85},
+        {name: "BigData" , level : 65},
+       // { name: "HTML / CSS", level: 85 },
+        { name: "Data Structures & Algorithms", level: 70 },
         { name: "Linear Algebra & Calculus", level: 80 },
         { name: "Statistics & Probability", level: 75 },
         { name: "Git & GitHub", level: 85 },
@@ -1370,7 +1372,7 @@
         leetcode: "https://leetcode.com/u/Madhav550/"
       },
       achievements: [
-        "Solved 250+ LeetCode problems with consistent daily practice.",
+        "Solved 350+ LeetCode problems with consistent daily practice.",
         "Built multiple end-to-end data + software projects with measurable outcomes.",
         "Strong foundation in DSA, DBMS, statistics, and machine learning basics.",
         "Active GitHub contributor with practical, portfolio-grade repositories."
@@ -1457,14 +1459,14 @@
     document.getElementById("linkedin").href = data.social.linkedin;
     document.getElementById("linkedin").textContent = "linkedin.com/in/madhav-yadav-35940624a";
 
-    const achievementList = document.getElementById("achievement-list");
+    /*const achievementList = document.getElementById("achievement-list");
     data.achievements.forEach((achievement) => {
       const li = document.createElement("li");
       li.textContent = achievement;
       achievementList.appendChild(li);
     });
 
-    const highlightedRepos = document.getElementById("highlighted-repos");
+   /* const highlightedRepos = document.getElementById("highlighted-repos");
     data.highlightedRepos.forEach((repo) => {
       const item = document.createElement("article");
       item.className = "repo-item";
@@ -1474,7 +1476,7 @@
       `;
       highlightedRepos.appendChild(item);
     });
-
+    */
     const form = document.getElementById("contact-form");
     const formStatus = document.getElementById("form-status");
     const submitBtn = document.getElementById("contact-submit");
