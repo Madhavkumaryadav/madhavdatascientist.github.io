@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madhav Kumar Yadav | Data Scientist & ML Engineer</title>
+<meta name="description" content="Madhav Kumar Yadav: applied ML and MLOps. Deployed projects with Python, Scikit-learn, FastAPI, Docker, MLflow and Streamlit.">
+<meta name="theme-color" content="#04060f">
+<link rel="canonical" href="https://madhavkumaryadav.github.io/madhavdatascientist.github.io/">
+<meta property="og:title" content="Madhav Kumar Yadav | Data Scientist & ML Engineer">
+<meta property="og:description" content="Applied ML and MLOps projects, from EDA to deployed services.">
+<meta property="og:image" content="https://madhavkumaryadav.github.io/madhavdatascientist.github.io/avatar.png">
+<link rel="preload" as="image" href="avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04060f;--ink:#e6f0ff;--mute:#8fa0c4;--cy:#00e5ff;--vi:#8b5cf6;--mg:#ff2e93;--lime:#b6ff3b;--line:rgba(0,229,255,.22);--glass:rgba(10,16,34,.66)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(60% 50% at 80% 10%,rgba(139,92,246,.22),transparent),radial-gradient(50% 50% at 5% 60%,rgba(0,229,255,.14),transparent),radial-gradient(40% 40% at 90% 95%,rgba(255,46,147,.13),transparent)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-50px;background:#fff;color:#000;padding:.5rem .8rem;border-radius:8px;z-index:99}.skip:focus{top:12px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cy),var(--vi),var(--mg));z-index:100;box-shadow:0 0 12px var(--cy)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem clamp(1rem,4vw,3rem);background:rgba(4,6,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-weight:700;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+nav ul{display:flex;gap:1.2rem;list-style:none;flex-wrap:wrap}
+nav ul a{text-decoration:none;color:var(--mute);font-size:.9rem}nav ul a:hover{color:var(--cy)}
+main{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.hero{min-height:92vh;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:3rem 0}
+.status{display:inline-flex;gap:.5rem;align-items:center;font-size:.8rem;color:var(--lime);border:1px solid rgba(182,255,59,.35);padding:.25rem .7rem;border-radius:999px;background:rgba(182,255,59,.06)}
+h1{font-size:clamp(2.4rem,6.2vw,4.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;margin:1rem 0}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--cy),var(--vi),var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.15rem;color:var(--cy);min-height:1.8em}
+.role::after{content:"▍";animation:pulse 1s infinite;margin-left:2px}
+.lead{color:var(--mute);max-width:56ch;margin-top:.6rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:10px;font-weight:700;font-size:.92rem;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 22px rgba(0,229,255,.35)}
+.btn.main{background:linear-gradient(90deg,var(--cy),#5b8cff);color:#021018;border:0}
+.hud{position:relative;aspect-ratio:1;max-width:430px;margin:auto;width:100%;display:grid;place-items:center;perspective:900px}
+.hud .ring{position:absolute;inset:0;border-radius:50%;border:1px dashed var(--line);animation:spin 30s linear infinite}
+.hud .ring.r2{inset:9%;border:1px solid rgba(139,92,246,.45);border-top-color:var(--cy);animation-duration:12s;animation-direction:reverse}
+.hud .ring.r3{inset:18%;border:2px solid transparent;border-left-color:var(--mg);border-right-color:var(--cy);animation-duration:7s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hud .photo{width:58%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:2px solid var(--cy);box-shadow:0 0 40px rgba(0,229,255,.45),inset 0 0 30px rgba(0,229,255,.3);background:linear-gradient(135deg,#0b1430,#1a1040);transition:transform .15s}
+.chip{position:absolute;font-size:.72rem;padding:.2rem .55rem;border:1px solid var(--line);border-radius:6px;background:var(--glass);backdrop-filter:blur(6px);color:var(--cy)}
+.c1{top:6%;left:0}.c2{top:22%;right:-2%}.c3{bottom:12%;left:-2%}.c4{bottom:2%;right:8%}
+.stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.stats div{padding:.7rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--glass)}
+.stats b{display:block;font-size:1.5rem;color:var(--cy)}.stats span{font-size:.78rem;color:var(--mute)}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:.8rem 0;margin:1rem 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq div{display:flex;gap:2.5rem;width:max-content;animation:mq 30s linear infinite;color:var(--mute);font-size:.95rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:4rem 0}
+.head{margin-bottom:2rem}.head h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.02em}
+.head h2::before{content:"// ";color:var(--vi)}.head p{color:var(--mute);margin-top:.4rem}
+.grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));perspective:1200px}
+.card{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:16px;overflow:hidden;backdrop-filter:blur(10px);transform-style:preserve-3d;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{border-color:var(--cy);box-shadow:0 0 30px rgba(0,229,255,.18)}
+.card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.viz{background:linear-gradient(160deg,#071026,#0d0a24);border-bottom:1px solid var(--line);padding:.6rem;position:relative}
+.card.wide .viz{border-bottom:0;border-right:1px solid var(--line);display:grid;align-items:center}
+.viz svg{width:100%;height:auto;display:block}
+.viz small{position:absolute;right:.7rem;bottom:.4rem;font-size:.65rem;color:#566a96}
+.body{padding:1.2rem 1.3rem 1.3rem}
+.body h3{font-size:1.2rem;margin-bottom:.3rem}
+.res{display:inline-block;color:var(--lime);font-weight:700;font-size:.88rem;margin-bottom:.5rem}
+.body ul{margin:.5rem 0 .8rem 1.1rem;color:var(--mute);font-size:.9rem}.body li{margin-bottom:.3rem}
+.tag{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0}
+.tag span{font-size:.74rem;padding:.15rem .55rem;border-radius:6px;border:1px solid var(--line);color:#bfe9ff;background:rgba(0,229,255,.05)}
+.links{display:flex;gap:1.1rem;font-weight:700;font-size:.88rem}.links a{color:var(--cy);text-decoration:none}.links a:hover{text-decoration:underline}
+.skills{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.skills .card{padding:1.2rem}.skills h3{font-size:.98rem;color:var(--mg);margin-bottom:.6rem}.skills .tag{margin:0}
+.time{position:relative;display:grid;gap:1.3rem;max-width:84ch;padding-left:1.6rem;border-left:1px solid var(--line)}
+.time>div{position:relative}.time>div::before{content:"";position:absolute;left:-1.95rem;top:.45rem;width:11px;height:11px;border-radius:50%;background:var(--cy);box-shadow:0 0 12px var(--cy)}
+.time h3{font-size:1.08rem}.time small{color:var(--vi);font-weight:500;filter:brightness(1.5)}.time p{color:var(--mute);font-size:.92rem}
+form{display:grid;gap:.8rem;max-width:620px;margin-top:1.5rem}
+label{font-size:.82rem;font-weight:700;color:#bfe9ff}
+input,textarea{width:100%;padding:.7rem .8rem;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);font:inherit}
+.hp{position:absolute;left:-9999px}.row{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
+#st{color:var(--mute);font-size:.9rem;min-height:1.4em}
+footer{text-align:center;color:var(--mute);font-size:.8rem;padding:2.5rem 0}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.on{opacity:1;transform:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hud{max-width:300px;order:-1}.card.wide{grid-template-columns:1fr}.card.wide .viz{border-right:0;border-bottom:1px solid var(--line)}.row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+<div id="bar"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<nav aria-label="Primary">
+  <a class="brand" href="#top"><i></i>Madhav Yadav</a>
+  <ul>
+    <li><a href="#work">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#path">Credentials</a></li>
+    <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div>
+      <span class="status">● Open to Data Science / ML internships</span>
+      <h1>Turning data into <em>deployed intelligence.</em></h1>
+      <p class="role" id="role" aria-label="Aspiring Data Scientist and ML Engineer"></p>
+      <p class="lead">Final-year B.Tech (CSE) student building end-to-end ML in Python: EDA, model comparison, Flask/FastAPI services, Docker, MLflow tracking and cloud deployment.</p>
+      <div class="cta">
+        <a class="btn main" href="#work">Explore projects</a>
+        <a class="btn" href="resume.pdf" download>Download resume</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+      <div class="stats">
+        <div><b>96.7%</b><span>Phishing detection accuracy</span></div>
+        <div><b>25K+</b><span>Health records analysed</span></div>
+        <div><b>5</b><span>Projects shipped</span></div>
+      </div>
+    </div>
+    <div class="hud" id="hud">
+      <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <img class="photo" src="avatar.png" alt="Madhav Kumar Yadav" width="250" height="250" fetchpriority="high" decoding="async" onerror="this.style.visibility='hidden'">
+      <span class="chip c1">Python</span><span class="chip c2">MLflow</span><span class="chip c3">FastAPI</span><span class="chip c4">Docker</span>
+    </div>
+  </header>
+
+  <div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+  <section id="work">
+    <div class="head rv"><h2>Projects</h2><p>Raw data to something running: tracked experiments, containers, live apps.</p></div>
+    <div class="grid">
+
+      <article class="card wide rv" data-tilt>
+        <div class="viz" id="v-health"></div>
+        <div class="body">
+          <h3>HealthSentinel: Public Health Analytics Platform</h3>
+          <span class="res">25K+ records · 8-page platform</span>
+          <ul>
+            <li>Star-schema model with an ETL cleaning pipeline, optional MongoDB Atlas storage and PDF/JSON report export (Springboard virtual internship).</li>
+            <li>ARIMA outbreak forecasting, IQR anomaly flags, KMeans risk clustering, a report-grounded Q&amp;A assistant and salted-hash login. Dockerized.</li>
+          </ul>
+          <div class="tag"><span>Streamlit</span><span>MongoDB</span><span>Statsmodels</span><span>Docker</span></div>
+          <div class="links"><a href="https://github.com/Madhavkumaryadav" target="_blank" rel="noopener">GitHub</a><a href="#" target="_blank" rel="noopener">Live demo</a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-tilt>
+        <div class="viz" id="v-net"></div>
+        <div class="body">
+          <h3>Network Security: Phishing Detection</h3>
+          <span class="res">≈96.7% test accuracy · F1 ≈ 0.97</span>
+          <ul>
+            <li>MongoDB ingestion, schema validation, KNN imputation on 11K+ records, 30 features.</li>
+            <li>Tuned 5 classifiers; chose a 256-tree Random Forest.</li>
+            <li>MLflow + DagsHub, FastAPI batch predictions, Docker, GitHub Actions CI.</li>
+          </ul>
+          <div class="tag"><span>Scikit-learn</span><span>MLflow</span><span>FastAPI</span><span>Docker</span></div>
+          <div class="links"><a href="https://github.com/Madhavkumaryadav/NetworkSecurity.git" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-tilt>
+        <div class="viz" id="v-stu"></div>
+        <div class="body">
+          <h3>Student Performance Predictor</h3>
+          <span class="res">Test R² ≈ 0.88 · RMSE ≈ 5.4 points</span>
+          <ul>
+            <li>Installable pipeline with custom logging and exceptions.</li>
+            <li>Compared 9 regressors incl. CatBoost and XGBoost on 1,000 records.</li>
+            <li>Flask app, Docker, AWS Elastic Beanstalk config.</li>
+          </ul>
+          <div class="tag"><span>CatBoost</span><span>XGBoost</span><span>Flask</span><span>AWS EB</span></div>
+          <div class="links"><a href="https://github.com/Madhavkumaryadav/ML_Project_1.git" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-tilt>
+        <div class="viz" id="v-fwi"></div>
+        <div class="body">
+          <h3>Forest Fire Weather Index Prediction</h3>
+          <span class="res">Test R² ≈ 0.98 · MAE ≈ 0.69</span>
+          <ul>
+            <li>EDA and correlation-based feature selection on Algerian Forest Fires data.</li>
+            <li>Linear, Lasso, Ridge, ElasticNet with 5-fold CV.</li>
+            <li>Ridge + StandardScaler deployed as a Flask app on Render.</li>
+          </ul>
+          <div class="tag"><span>Flask</span><span>Scikit-learn</span><span>Render</span></div>
+          <div class="links"><a href="https://github.com/Madhavkumaryadav/FWI_predictor_project.git" target="_blank" rel="noopener">GitHub</a><a href="#" target="_blank" rel="noopener">Live demo</a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-tilt>
+        <div class="viz" id="v-ops"></div>
+        <div class="body">
+          <h3>MLOps Practice: Airflow &amp; Tracking</h3>
+          <ul>
+            <li>Orchestrated a data pipeline with Apache Airflow in Docker.</li>
+            <li>MLflow autologging and DagsHub experiment tracking.</li>
+          </ul>
+          <div class="tag"><span>Airflow</span><span>MLflow</span><span>Docker</span></div>
+          <div class="links"><a href="https://github.com/Madhavkumaryadav" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="head rv"><h2>Technical skills</h2><p>Grouped by where they sit in the ML lifecycle.</p></div>
+    <div class="skills rv">
+      <div class="card"><h3>Languages</h3><div class="tag"><span>Python</span><span>SQL</span></div></div>
+      <div class="card"><h3>ML &amp; data</h3><div class="tag"><span>Scikit-learn</span><span>CatBoost</span><span>XGBoost</span><span>Pandas</span><span>NumPy</span><span>Statsmodels (ARIMA)</span><span>Matplotlib</span><span>Seaborn</span><span>EDA</span></div></div>
+      <div class="card"><h3>MLOps &amp; backend</h3><div class="tag"><span>Docker</span><span>MLflow</span><span>DagsHub</span><span>Airflow</span><span>Flask</span><span>FastAPI</span><span>GitHub Actions</span></div></div>
+      <div class="card"><h3>Databases</h3><div class="tag"><span>MySQL</span><span>MongoDB</span><span>SQLite</span></div></div>
+      <div class="card"><h3>Visualization &amp; tools</h3><div class="tag"><span>Power BI</span><span>Tableau</span><span>Streamlit</span><span>Excel</span><span>Git</span><span>Jupyter</span><span>VS Code</span></div></div>
+      <div class="card"><h3>Deployment</h3><div class="tag"><span>Render</span><span>AWS Elastic Beanstalk</span><span>Streamlit Cloud</span></div></div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="head rv"><h2>Education &amp; credentials</h2></div>
+    <div class="time rv">
+      <div><h3>B.Tech, Computer Science &amp; Engineering</h3><small>Jagannath University · 2023 – 2027 · CGPA 7.7/10</small><p>Machine Learning, DSA, DBMS, Probability &amp; Statistics, Big Data Analytics.</p></div>
+      <div><h3>WorldQuant University: Data Science Modeling</h3><small>Credly badge</small><p>Four hands-on projects across CSV, SQLite and MongoDB: cleaning and EDA, correlation analysis, Ridge/Lasso regression, classification evaluation, AR/ARMA forecasting.</p></div>
+      <div><h3>Springboard Virtual Internship</h3><small>Healthcare Operations Intelligence</small><p>Analytics and dashboarding; produced HealthSentinel.</p></div>
+      <div><h3>Other certifications</h3><p>Master Microsoft Power BI (Udemy) · Python Essentials 1, Cisco (Jul 2025) · Introduction to Cybersecurity, Cisco (Aug 2024)</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="head rv"><h2>Contact</h2><p>Jaipur, India · remote or on-site.</p></div>
+    <div class="cta rv">
+      <a class="btn" href="mailto:ymadhav081@gmail.com">ymadhav081@gmail.com</a>
+      <a class="btn" href="https://github.com/Madhavkumaryadav" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/madhav-yadav-35940624a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://leetcode.com/u/Madhav550/" target="_blank" rel="noopener">LeetCode</a>
+    </div>
+    <form id="cf" class="rv" novalidate>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <div><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div><label for="s">Subject</label><input id="s" name="subject" required></div>
+      <div><label for="m">Message</label><textarea id="m" name="message" rows="5" required></textarea></div>
+      <div><button class="btn main" id="send" type="submit">Send message</button></div>
+      <p id="st" aria-live="polite"></p>
+    </form>
+  </section>
+  <footer>© <span id="yr"></span> Madhav Kumar Yadav · Chart visuals are illustrative, not exported results.</footer>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+$("yr").textContent=new Date().getFullYear();
+
+/* marquee */
+const stack=["Python","Scikit-learn","FastAPI","Docker","MLflow","DagsHub","Airflow","Streamlit","MongoDB","SQL","Pandas","CatBoost","XGBoost","Power BI","GitHub Actions"];
+$("mq").innerHTML=[...stack,...stack].map(s=>`<span>◆ ${s}</span>`).join("");
+
+/* role typing */
+(function(){const t="Aspiring Data Scientist · ML Engineer · MLOps",el=$("role");
+ if(reduce){el.textContent=t;return}let i=0;(function k(){el.textContent=t.slice(0,i++);if(i<=t.length)setTimeout(k,38)})()})();
+
+/* ---------- generated chart visuals (inline SVG, zero image requests) ---------- */
+const C={cy:"#00e5ff",vi:"#8b5cf6",mg:"#ff2e93",lime:"#b6ff3b",g:"#1b2a52"};
+const rng=(s=>()=>(s=(s*16807)%2147483647)/2147483647);
+const frame=(w,h,inner)=>`<svg viewBox="0 0 ${w} ${h}" role="img" aria-hidden="true"><defs><linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="${C.cy}"/><stop offset="1" stop-color="${C.vi}"/></linearGradient></defs>${inner}</svg><small>illustrative</small>`;
+const grid=(w,h)=>{let s="";for(let x=0;x<=w;x+=w/8)s+=`<line x1="${x}" y1="0" x2="${x}" y2="${h}" stroke="${C.g}"/>`;for(let y=0;y<=h;y+=h/4)s+=`<line x1="0" y1="${y}" x2="${w}" y2="${y}" stroke="${C.g}"/>`;return s};
+
+// HealthSentinel: ARIMA forecast + anomalies
+(function(){const r=rng(7),pts=[];for(let i=0;i<36;i++)pts.push(80-18*Math.sin(i/4)-i*.5+(r()-.5)*10);
+ const fc=[];let last=pts[35];for(let i=0;i<14;i++){last-=.4;fc.push(last+Math.sin(i/2)*2)}
+ const X=i=>10+i*(380/49),P=a=>a.map((v,i)=>`${X(i)},${v+10}`);
+ const hist=pts.map((v,i)=>`${X(i)},${v+10}`).join(" ");
+ const fl=fc.map((v,i)=>`${X(i+35)},${v+10}`),up=fc.map((v,i)=>`${X(i+35)},${v+10-(4+i)}`),lo=fc.map((v,i)=>`${X(49-13+i-0)},${v+10+4+i}`).reverse();
+ const an=[9,22,31].map(i=>`<circle cx="${X(i)}" cy="${pts[i]+10}" r="5" fill="none" stroke="${C.mg}" stroke-width="2"/>`).join("");
+ $("v-health").innerHTML=frame(400,150,grid(400,150)+`<polygon points="${[...up,...lo].join(" ")}" fill="${C.vi}" opacity=".3"/><polyline points="${hist}" fill="none" stroke="url(#gA)" stroke-width="2.5"/><polyline points="${fl.join(" ")}" fill="none" stroke="${C.lime}" stroke-width="2.5" stroke-dasharray="5 4"/>${an}<text x="14" y="140" fill="#6b7fae" font-size="10">cases · ARIMA forecast · IQR anomalies</text>`)})();
+
+// Phishing: ROC curve + accuracy ring
+$("v-net").innerHTML=frame(400,170,`<g transform="translate(20,10)">${grid(190,140)}<line x1="0" y1="140" x2="190" y2="0" stroke="#3a4a7a" stroke-dasharray="4"/><path d="M0 140 C4 40 20 10 60 5 S150 1 190 0 L190 140Z" fill="${C.cy}" opacity=".15"/><path d="M0 140 C4 40 20 10 60 5 S150 1 190 0" fill="none" stroke="url(#gA)" stroke-width="3"/></g><g transform="translate(300,85)"><circle r="52" fill="none" stroke="${C.g}" stroke-width="10"/><circle r="52" fill="none" stroke="${C.lime}" stroke-width="10" stroke-linecap="round" stroke-dasharray="${2*Math.PI*52*.967} 400" transform="rotate(-90)"/><text text-anchor="middle" y="6" fill="#e6f0ff" font-size="20" font-weight="700">96.7%</text></g>`);
+
+// Student: predicted vs actual
+(function(){const r=rng(11);let d="";for(let i=0;i<70;i++){const t=r(),x=20+t*360,y=150-(t*130)+(r()-.5)*26;d+=`<circle cx="${x.toFixed(1)}" cy="${Math.max(8,Math.min(152,y)).toFixed(1)}" r="3" fill="${i%2?C.cy:C.vi}" opacity=".85"/>`}
+ $("v-stu").innerHTML=frame(400,170,grid(400,170)+`<line x1="20" y1="150" x2="380" y2="20" stroke="${C.lime}" stroke-dasharray="5 4"/>${d}<text x="16" y="166" fill="#6b7fae" font-size="10">actual → predicted · R² ≈ 0.88</text>`)})();
+
+// FWI: weather-risk heatmap
+(function(){const r=rng(5);let s="";for(let i=0;i<20;i++)for(let j=0;j<7;j++){const v=Math.min(1,Math.max(0,(i/20)*.7+r()*.45-.1+(j>2&&j<5?.15:0)));
+ s+=`<rect x="${14+i*18.2}" y="${10+j*19}" width="16" height="16" rx="3" fill="${v>.66?C.mg:v>.33?C.vi:C.cy}" opacity="${(.25+v*.75).toFixed(2)}"/>`}
+ $("v-fwi").innerHTML=frame(400,170,s+`<text x="14" y="160" fill="#6b7fae" font-size="10">fire-weather risk grid · low → high</text>`)})();
+
+// Airflow DAG
+(function(){const n=[["ingest",30,35],["clean",120,35],["train",210,15],["eval",210,70],["track",300,35]],e=[[0,1],[1,2],[1,3],[2,4],[3,4]];
+ const L=e.map(([a,b])=>`<path d="M${n[a][1]+40} ${n[a][2]} C${n[a][1]+75} ${n[a][2]} ${n[b][1]-35} ${n[b][2]} ${n[b][1]-5} ${n[b][2]}" fill="none" stroke="${C.cy}" opacity=".6" stroke-width="2"/>`).join("");
+ const N=n.map(([t,x,y])=>`<rect x="${x-25}" y="${y-14}" width="68" height="28" rx="8" fill="#0b1636" stroke="${C.lime}"/><text x="${x+9}" y="${y+4}" text-anchor="middle" fill="#e6f0ff" font-size="11">${t}</text>`).join("");
+ $("v-ops").innerHTML=frame(400,100,`<g transform="translate(20,10)">${L}${N}</g>`)})();
+
+/* ---------- 3D neural-network background (loads after first paint) ---------- */
+function start3D(){
+  const s=document.createElement("script");
+  s.src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+  s.onload=()=>{
+    const cv=$("bg"),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:false});
+    R.setPixelRatio(Math.min(devicePixelRatio,1.5));
+    const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(60,1,.1,100);cam.position.z=14;
+    const N=matchMedia("(max-width:700px)").matches?60:110,pos=[],pts=new Float32Array(N*3);
+    for(let i=0;i<N;i++){const p=new THREE.Vector3((Math.random()-.5)*26,(Math.random()-.5)*16,(Math.random()-.5)*14);pos.push(p);pts.set([p.x,p.y,p.z],i*3)}
+    const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.BufferAttribute(pts,3));
+    const grp=new THREE.Group();sc.add(grp);
+    grp.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x00e5ff,size:.12,transparent:true,opacity:.85})));
+    const lv=[];for(let i=0;i<N;i++)for(let j=i+1;j<N;j++)if(pos[i].distanceTo(pos[j])<4.2)lv.push(pos[i],pos[j]);
+    grp.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(lv),new THREE.LineBasicMaterial({color:0x8b5cf6,transparent:true,opacity:.22})));
+    const fit=()=>{R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()};
+    addEventListener("resize",fit);fit();
+    let mx=0,my=0,sy=0;addEventListener("pointermove",e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+    addEventListener("scroll",()=>sy=scrollY/innerHeight);
+    let on=true;document.addEventListener("visibilitychange",()=>{on=!document.hidden;if(on)loop()});
+    (function loop(){if(!on)return;const t=performance.now()/1000;
+      grp.rotation.y=t*.04+mx*.5;grp.rotation.x=my*.3+sy*.15;cam.position.y=-sy*1.2;
+      R.render(sc,cam);if(!reduce)requestAnimationFrame(loop)})();
+  };
+  document.head.appendChild(s);
+}
+if(!reduce)("requestIdleCallback"in window?requestIdleCallback(start3D,{timeout:2000}):setTimeout(start3D,800));
+
+/* ---------- card tilt, hero parallax, progress, reveal ---------- */
+if(!reduce){
+  document.querySelectorAll("[data-tilt]").forEach(el=>{
+    el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform=`rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg) translateZ(6px)`});
+    el.addEventListener("pointerleave",()=>el.style.transform="")});
+  const h=$("hud");addEventListener("pointermove",e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;h.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg)`});
+}
+addEventListener("scroll",()=>{$("bar").style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+"%"},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+/* ---------- contact form ---------- */
+const f=$("cf"),st=$("st"),b=$("send"),t0=Date.now();
+f.addEventListener("submit",async e=>{
+  e.preventDefault();if(f.website.value)return;
+  if(Date.now()-t0<2500){st.textContent="Please wait a moment, then send again.";return}
+  if(!f.checkValidity()){st.textContent="Fill in every field with a valid email.";f.reportValidity();return}
+  b.disabled=true;st.textContent="Sending…";
+  try{const r=await fetch("https://formsubmit.co/ajax/ymadhav081@gmail.com",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+    body:JSON.stringify({name:f.name.value.trim(),email:f.email.value.trim(),subject:f.subject.value.trim(),message:f.message.value.trim(),_captcha:"false"})});
+    if(!r.ok)throw 0;f.reset();st.textContent="Message sent. Thank you!"}
+  catch{st.textContent="Message not sent. Try again or email ymadhav081@gmail.com."}
+  b.disabled=false});
+</script>
+</body>
+</html>
